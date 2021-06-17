@@ -16,7 +16,12 @@ const router = new Router({
 })
 
 router.beforeEach(async (to, from, next) => {
-  document.title = to.meta.title;
+  document.title = to.meta.title || '';
+  let isLogin = to.meta.login || true
+  let token = true
+  if (isLogin && !token) {
+    next({name: 'login'})
+  }
   next()
 });
 
