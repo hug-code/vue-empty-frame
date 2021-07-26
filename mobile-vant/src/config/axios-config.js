@@ -16,9 +16,13 @@ service.interceptors.response.use((response) => {
   if (res.code !== 200) {
     Toast.fail(res.msg || '接口请求异常');
   }
-  return res
+  return Promise.resolve(res)
 }, (error) => {
-  return Promise.reject(error)
+  console.log(error)
+  return {
+    code: -1,
+    msg: '接口请求异常'
+  }
 })
 
 export default service
