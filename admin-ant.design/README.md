@@ -1,6 +1,21 @@
-# vue-empty-site
+# admin-ant.design
 
-vue 空框架，开箱即用
+vue 空框架(pc-admin)，开箱即用
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
 
 ### 版本信息
 ```text
@@ -34,6 +49,7 @@ vuex: 3.5.1
     "mockjs": "^1.1.0",
     "vue-template-compiler": "^2.6.11"
 }
+
 ```
 ### 其他
 图片压缩使用 `image-webpack-loader` 包，npm安装会有问题，启动时报错：
@@ -44,22 +60,5 @@ Syntax Error: Error: Cannot find module 'imagemin-gifsicle'
 ```text
 npm remove image-webpack-loader
 cnpm install --save-dev image-webpack-loader
-```
-
-### Nginx配置
-```shell
-server {
-    listen       80;
-    server_name  localhost;
-    root         /home/wwwroot/web;
-    index        index.php index.html index.htm;
-    
-    # 路由设置为 history 需要配置，否则子页刷新404
-    location / {
-        try_files $uri $uri/ /index.html;
-    }
-
-    # access_log  /home/logs/nginx/localhost.log;
-}
 ```
 

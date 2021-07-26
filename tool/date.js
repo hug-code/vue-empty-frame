@@ -1,8 +1,8 @@
 
 /**
  * 数字前置补零
- * @param num 数字
- * @param length 位数
+ * @param num
+ * @param length
  * @returns {string}
  */
 export function digit(num, length) {
